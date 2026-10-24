@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   SEVEN-THEME ENGINE DESIGN TOKENS
+   ========================================================================== */
+
+:root,
+[data-theme="minimal"] {
+  --color-bg-base: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-hover: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-focus: #3b82f6;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+  --color-text-dim: #94a3b8;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-text: #ffffff;
+  --color-secondary: #64748b;
+  --color-accent: #3b82f6;
+  --color-accent-glow: rgba(59, 130, 246, 0.25);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-xp: #8b5cf6;
+  --radius-theme: 0.75rem;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --theme-vibe: "Clean & Distraction-Free";
+}
+
+[data-theme="hacker"] {
+  --color-bg-base: #060a07;
+  --color-bg-surface: #0a110b;
+  --color-bg-card: #0d160f;
+  --color-bg-card-hover: #132216;
+  --color-border: #16381c;
+  --color-border-focus: #22c55e;
+  --color-text: #4ade80;
+  --color-text-muted: #22c55e99;
+  --color-text-dim: #15803d;
+  --color-primary: #22c55e;
+  --color-primary-hover: #16a34a;
+  --color-primary-text: #051307;
+  --color-secondary: #14532d;
+  --color-accent: #00ff66;
+  --color-accent-glow: rgba(34, 197, 94, 0.35);
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #f43f5e;
+  --color-xp: #a3e635;
+  --radius-theme: 0.25rem;
+  --shadow-sm: 0 0 5px rgba(34, 197, 94, 0.2);
+  --shadow-md: 0 0 12px rgba(34, 197, 94, 0.25);
+  --shadow-lg: 0 0 24px rgba(34, 197, 94, 0.3);
+  --font-display: 'Fira Code', monospace;
+  --font-body: 'Fira Code', monospace;
+  --theme-vibe: "Terminal Matrix";
+}
+
+[data-theme="cyberpunk"] {
+  --color-bg-base: #0a0418;
+  --color-bg-surface: #12092a;
+  --color-bg-card: #180d38;
+  --color-bg-card-hover: #231350;
+  --color-border: #ff007f40;
+  --color-border-focus: #00f0ff;
+  --color-text: #f8f7ff;
+  --color-text-muted: #c084fc;
+  --color-text-dim: #8b5cf6;
+  --color-primary: #00f0ff;
+  --color-primary-hover: #00c7d4;
+  --color-primary-text: #070014;
+  --color-secondary: #ff007f;
+  --color-accent: #fcee0a;
+  --color-accent-glow: rgba(0, 240, 255, 0.45);
+  --color-success: #00ffaa;
+  --color-warning: #fcee0a;
+  --color-danger: #ff0055;
+  --color-xp: #ff007f;
+  --radius-theme: 0.125rem;
+  --shadow-sm: 0 0 6px rgba(0, 240, 255, 0.3);
+  --shadow-md: 0 0 15px rgba(255, 0, 127, 0.35);
+  --shadow-lg: 0 0 30px rgba(0, 240, 255, 0.4);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --theme-vibe: "Neon Dystopia";
+}
+
+[data-theme="space"] {
+  --color-bg-base: #070914;
+  --color-bg-surface: #0e1227;
+  --color-bg-card: #141937;
+  --color-bg-card-hover: #1c234b;
+  --color-border: #2b356a;
+  --color-border-focus: #818cf8;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-primary-text: #ffffff;
+  --color-secondary: #a855f7;
+  --color-accent: #38bdf8;
+  --color-accent-glow: rgba(99, 102, 241, 0.4);
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-xp: #a855f7;
+  --radius-theme: 1rem;
+  --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.15);
+  --shadow-md: 0 4px 16px rgba(99, 102, 241, 0.2);
+  --shadow-lg: 0 10px 30px rgba(99, 102, 241, 0.25);
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --theme-vibe: "Cosmic Odyssey";
+}
+
+[data-theme="nature"] {
+  --color-bg-base: #07150e;
+  --color-bg-surface: #0d2217;
+  --color-bg-card: #122b1f;
+  --color-bg-card-hover: #173828;
+  --color-border: #1f4a35;
+  --color-border-focus: #10b981;
+  --color-text: #ecfdf5;
+  --color-text-muted: #a7f3d0;
+  --color-text-dim: #6ee7b7;
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-primary-text: #022013;
+  --color-secondary: #059669;
+  --color-accent: #f59e0b;
+  --color-accent-glow: rgba(16, 185, 129, 0.3);
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-xp: #34d399;
+  --radius-theme: 1.25rem;
+  --shadow-sm: 0 2px 6px rgba(16, 185, 129, 0.1);
+  --shadow-md: 0 4px 14px rgba(16, 185, 129, 0.15);
+  --shadow-lg: 0 8px 24px rgba(16, 185, 129, 0.2);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --theme-vibe: "Serene Forest";
+}
+
+[data-theme="anime"] {
+  --color-bg-base: #140d21;
+  --color-bg-surface: #1e1333;
+  --color-bg-card: #271a42;
+  --color-bg-card-hover: #342258;
+  --color-border: #523588;
+  --color-border-focus: #ec4899;
+  --color-text: #fdf2f8;
+  --color-text-muted: #f472b6;
+  --color-text-dim: #c084fc;
+  --color-primary: #ec4899;
+  --color-primary-hover: #db2777;
+  --color-primary-text: #ffffff;
+  --color-secondary: #8b5cf6;
+  --color-accent: #fbbf24;
+  --color-accent-glow: rgba(236, 72, 153, 0.35);
+  --color-success: #10b981;
+  --color-warning: #fbbf24;
+  --color-danger: #f43f5e;
+  --color-xp: #ec4899;
+  --radius-theme: 1rem;
+  --shadow-sm: 0 2px 8px rgba(236, 72, 153, 0.15);
+  --shadow-md: 0 4px 16px rgba(236, 72, 153, 0.22);
+  --shadow-lg: 0 8px 28px rgba(236, 72, 153, 0.3);
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --theme-vibe: "Expressive Kawaii";
+}
+
+[data-theme="retro-pixel"] {
+  --color-bg-base: #120e24;
+  --color-bg-surface: #1b1633;
+  --color-bg-card: #241d45;
+  --color-bg-card-hover: #2f2659;
+  --color-border: #facc15;
+  --color-border-focus: #22d3ee;
+  --color-text: #fef08a;
+  --color-text-muted: #93c5fd;
+  --color-text-dim: #a5b4fc;
+  --color-primary: #facc15;
+  --color-primary-hover: #eab308;
+  --color-primary-text: #1a102f;
+  --color-secondary: #22d3ee;
+  --color-accent: #f43f5e;
+  --color-accent-glow: rgba(250, 204, 21, 0.3);
+  --color-success: #4ade80;
+  --color-warning: #facc15;
+  --color-danger: #f43f5e;
+  --color-xp: #facc15;
+  --radius-theme: 0px;
+  --shadow-sm: 3px 3px 0px #000000;
+  --shadow-md: 5px 5px 0px #000000;
+  --shadow-lg: 8px 8px 0px #000000;
+  --font-display: 'Press Start 2P', monospace;
+  --font-body: 'Fira Code', monospace;
+  --theme-vibe: "8-Bit Arcade";
+}
+
+/* ==========================================================================
+   GLOBAL APP STYLING & ACCESSIBILITY
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text);
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
+
+/* Retro theme special border styles */
+[data-theme="retro-pixel"] .pixel-box {
+  box-shadow: 4px 4px 0px #000;
+  border: 3px solid var(--color-border);
+}
+
+[data-theme="retro-pixel"] button {
+  text-transform: uppercase;
+}
+
+/* Hacker theme subtle CRT scanline effect */
+[data-theme="hacker"] .crt-glow {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+/* Cyberpunk neon text glow */
+[data-theme="cyberpunk"] .neon-text {
+  text-shadow: 0 0 7px var(--color-primary), 0 0 14px var(--color-primary);
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Reduced motion preference respect */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
